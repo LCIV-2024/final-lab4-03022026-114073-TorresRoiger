@@ -75,7 +75,7 @@ public class GameService {
                 .orElseThrow(() -> new RuntimeException("Jugador no encontrado con id: " + playerId));
 
         // Convertir la letra a mayúscula
-        char guess = Character.toLowerCase(letra);
+        char guess = Character.toUpperCase(letra);
 
         // Buscar la partida en curso más reciente del jugador
         List<GameInProgress> games = gameInProgressRepository.findByJugadorIdOrderByFechaInicioDesc(playerId);
